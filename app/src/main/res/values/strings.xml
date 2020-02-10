@@ -16,13 +16,7 @@
     <string name="menu_dashboard">Dashboard</string>
     <string name="menu_transaction">Transactions</string>
 
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="menu_tools">Tools</string>
-    <string name="menu_share">Share</string>
-    <string name="menu_send">Send</string>
     <string name="this_month_you_ve_spent">This month you\'ve spent...</string>
     <string name="your_top_spending_category">Your top spending category</string>
 

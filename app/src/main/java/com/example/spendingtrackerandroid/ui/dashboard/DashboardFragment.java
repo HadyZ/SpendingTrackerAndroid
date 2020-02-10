@@ -27,13 +27,11 @@ public class DashboardFragment extends Fragment {
     JSONArray data;
     TextView amt,category,categoryValue;
 
-    String total;
-
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
 
-        View root = inflater.inflate(R.layout.fragment_home ,container, false);
+        View root = inflater.inflate(R.layout.fragment_dashboard,container, false);
         amt = root.findViewById(R.id.txtcategories);
         category = root.findViewById(R.id.lbl_category1_name);
         categoryValue = root.findViewById(R.id.txt_category1_value);
@@ -65,9 +63,9 @@ public class DashboardFragment extends Fragment {
                                 try{
 
 
-                                    amt.setText(obj.getString("summary"));
-                                    category.setText(obj.getString("category"));
-                                    categoryValue.setText(obj.getString("amount"));
+                                    amt.setText("$" + obj.getString("summary"));
+                                    category.setText(obj.getString("category").toUpperCase());
+                                    categoryValue.setText( "$" + obj.getString("amount"));
 
 
                                     Toast.makeText(getActivity(),"Text!" + obj,Toast.LENGTH_SHORT).show();
