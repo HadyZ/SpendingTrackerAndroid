@@ -10,3 +10,4 @@ $cat_id = $_GET['cat_id'];
 $query = "delete from transacions where cat_id='$cat_id'";
 if(mysqli_query($con, $query)){echo "success";}
 else {echo "fail";}
+?>

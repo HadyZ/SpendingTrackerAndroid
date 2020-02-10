@@ -1,33 +1,92 @@
 package com.example.spendingtrackerandroid.ui.dashboard;
 
+
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import androidx.annotation.Nullable;
-import androidx.annotation.NonNull;
-import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProviders;
+import android.widget.Toast;
+
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.JsonArrayRequest;
+import com.android.volley.toolbox.Volley;
 import com.example.spendingtrackerandroid.R;
 
-public class DashboardFragment extends Fragment {
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
-    private DashboardViewModel dashboardViewModel;
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+
+public class DashboardFragment extends Fragment {
+    JSONArray data;
+    TextView amt,category,categoryValue;
+
+    String total;
+
 
     public View onCreateView(@NonNull LayoutInflater inflater,
             ViewGroup container, Bundle savedInstanceState) {
-        dashboardViewModel =
-                ViewModelProviders.of(this).get(DashboardViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_home, container, false);
-        final TextView textView = root.findViewById(R.id.txt_header);
-        dashboardViewModel.getText().observe(this, new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+
+        View root = inflater.inflate(R.layout.fragment_home ,container, false);
+        amt = root.findViewById(R.id.txtcategories);
+        category = root.findViewById(R.id.lbl_category1_name);
+        categoryValue = root.findViewById(R.id.txt_category1_value);
+
+
+        getdashboarddata();
+
+
         return root;
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+    }
+
+    private void getdashboarddata(){
+        String url = "http://192.168.1.69/SpendingMoney/getdashboarddata.php";
+        RequestQueue queue = Volley.newRequestQueue(getContext());
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest
+                (Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
+                            @Override
+                            public void onResponse(JSONArray response) {
+
+                                data = response;
+
+                                JSONObject obj = data.optJSONObject(0);
+                                try{
+
+
+                                    amt.setText(obj.getString("summary"));
+                                    category.setText(obj.getString("category"));
+                                    categoryValue.setText(obj.getString("amount"));
+
+
+                                    Toast.makeText(getActivity(),"Text!" + obj,Toast.LENGTH_SHORT).show();
+                                }catch (JSONException e){
+                                }
+
+                            }
+                        }, new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+//
+                        Toast.makeText(getActivity(),"aa!" + error,Toast.LENGTH_SHORT).show();
+                    }
+                });
+        queue.add(jsonArrayRequest);
+
+
+    }
 }
+
+
+

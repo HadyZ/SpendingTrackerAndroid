@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -11,34 +9,63 @@
         android:id="@+id/txt_header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:layout_alignParentTop="true"
-
-        android:layout_marginTop="225dp"
-
+        android:layout_marginTop="50dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-
-        android:layout_marginBottom="14dp"
         android:textAlignment="center"
-        android:textSize="20sp" />
-<!--    android:layout_above="@+id/txt_amount"-->
+        android:textSize="20sp"
+        android:text="@string/this_month_you_ve_spent"/>
 
     <TextView
-        android:id="@+id/txt_amount"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+
+        android:id="@+id/txtcategories"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_marginTop="22dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="50sp"
         android:layout_below="@id/txt_header"
-        android:text="TextView" />
+ />
 
-<!--    android:layout_above="@+id/txt_spending_categories"-->
 
     <TextView
-        android:id="@+id/txt_spending_categories"
-        android:layout_width="216dp"
-        android:layout_height="99dp"
-        android:layout_below="@+id/txt_amount"
-        android:text="TextView" />
+        android:id="@+id/lbl_spend"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="30sp"
+        android:text="@string/your_top_spending_category"
+        android:layout_below="@+id/txtcategories"/>
+
+
+    <TextView
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:id="@+id/lbl_category1_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textSize="20sp"
+        android:layout_below="@id/lbl_spend" />
+
+
+    <TextView
+        android:id="@+id/txt_category1_value"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:layout_below="@+id/lbl_category1_name"/>
+
 
 </RelativeLayout>

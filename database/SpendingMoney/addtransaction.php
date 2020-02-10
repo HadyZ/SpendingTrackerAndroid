@@ -16,3 +16,5 @@ echo mysqli_insert_id($con);
 // this returns the id that mysql used for the new transaction
 }
 else {echo "-1  $query";}
+
+?>

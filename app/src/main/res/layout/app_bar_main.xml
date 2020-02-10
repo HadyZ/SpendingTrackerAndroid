@@ -30,6 +30,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
         android:src="@mipmap/ic_add"
+        android:tint="#F7F3F3"
         app:backgroundTint="@color/addTransaction"
         app:icon="@mipmap/ic_add" />
 

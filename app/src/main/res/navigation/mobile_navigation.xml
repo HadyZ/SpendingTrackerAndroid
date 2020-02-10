@@ -9,13 +9,13 @@
     <fragment
         android:id="@+id/nav_dashboard"
         android:name="com.example.spendingtrackerandroid.ui.dashboard.DashboardFragment"
-        android:label="@string/menu_home"
+        android:label="@string/menu_dashboard"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_transactions"
         android:name="com.example.spendingtrackerandroid.ui.transactions.TransactionFragment"
-        android:label="@string/menu_slideshow"
+        android:label="@string/menu_transaction"
         tools:layout="@layout/fragment_slideshow" />
 
 </navigation>
