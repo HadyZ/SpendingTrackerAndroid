@@ -67,8 +67,6 @@ public class DashboardFragment extends Fragment {
                                     category.setText(obj.getString("category").toUpperCase());
                                     categoryValue.setText( "$" + obj.getString("amount"));
 
-
-                                    Toast.makeText(getActivity(),"Text!" + obj,Toast.LENGTH_SHORT).show();
                                 }catch (JSONException e){
                                 }
 
@@ -77,7 +75,7 @@ public class DashboardFragment extends Fragment {
                     @Override
                     public void onErrorResponse(VolleyError error) {
 //
-                        Toast.makeText(getActivity(),"aa!" + error,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getActivity(),"Error! " + error,Toast.LENGTH_SHORT).show();
                     }
                 });
         queue.add(jsonArrayRequest);
