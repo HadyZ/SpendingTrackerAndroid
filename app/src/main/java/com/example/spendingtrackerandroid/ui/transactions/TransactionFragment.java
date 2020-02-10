@@ -38,7 +38,7 @@ public class TransactionFragment extends Fragment {
     }
 
     public void getDataFromDB() {
-        String url ="http://192.168.1.71/SpendingMoney/getAllTransactions.php";
+        String url ="http://192.168.1.69/SpendingMoney/getAllTransactions.php";
         RequestQueue queue = Volley.newRequestQueue(getActivity().getApplicationContext());
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Request.Method.GET, url, null, new Response.Listener<JSONArray>() {
             @Override

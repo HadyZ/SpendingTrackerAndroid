@@ -57,7 +57,6 @@ public class CustomAdapter extends BaseAdapter {
         holder.nametxtv = rowView.findViewById(R.id.t_name);
         holder.amounttxtv = rowView.findViewById(R.id.t_amount);
         holder.typetxtv = rowView.findViewById(R.id.t_type);
-        holder.datetxtv=rowView.findViewById(R.id.t_date);
         holder.deleteimage = rowView.findViewById(R.id.delete);
 
         // fill them with data:
@@ -69,10 +68,8 @@ public class CustomAdapter extends BaseAdapter {
         JSONObject obj = data.optJSONObject(i);
         try {
             holder.nametxtv.setText(obj.getString("summary"));
-            holder.typetxtv.setText(obj.getString("category"));
+            holder.typetxtv.setText(obj.getString("category").toUpperCase());
             holder.amounttxtv.setText(obj.getString("amount"));
-            holder.datetxtv.setText(obj.getString("trans_date"));
-            //int id= obj.getInt("id");
             holder.deleteimage.setTag(obj.getInt("cat_id"));
             holder.deleteimage.setOnClickListener(new View.OnClickListener() {
                 @Override

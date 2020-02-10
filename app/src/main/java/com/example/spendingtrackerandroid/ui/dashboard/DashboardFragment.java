@@ -49,7 +49,7 @@ public class DashboardFragment extends Fragment {
     }
 
     private void getDashboardData(){
-        String url = "http://192.168.1.71/SpendingMoney/getdashboarddata.php";
+        String url = "http://192.168.1.69/SpendingMoney/getdashboarddata.php";
         RequestQueue queue = Volley.newRequestQueue(getContext());
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest

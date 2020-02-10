@@ -90,7 +90,7 @@ public class AddTransaction extends AppCompatActivity {
         String category = s.getSelectedItem().toString();
 
 
-        String url ="http://192.168.1.71/SpendingMoney/addtransaction.php?category=" + category + "&summary=" + summary + "&trans_date=" + date + "&amount=" + amount;
+        String url ="http://192.168.1.69/SpendingMoney/addtransaction.php?category=" + category + "&summary=" + summary + "&trans_date=" + date + "&amount=" + amount;
         RequestQueue queue =
                 Volley.newRequestQueue(this);
         StringRequest request = new
