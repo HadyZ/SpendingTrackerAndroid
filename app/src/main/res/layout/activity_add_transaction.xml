@@ -2,6 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -27,19 +28,20 @@
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="0dp"
+        android:layout_marginStart="32dp"
         android:layout_marginEnd="32dp"
         android:entries="@array/type"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="70dp"
         />
 
 
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/summary"
         android:layout_below="@id/spinner"
-android:layout_marginTop="50dp"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:hint="@string/menu">
+        android:layout_marginTop="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/menu">
 
     <com.google.android.material.textfield.TextInputEditText
 
@@ -47,5 +49,35 @@ android:layout_marginTop="50dp"
         android:layout_height="wrap_content" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="Date"/>
+    <DatePicker
+        android:layout_below="@id/summary"
+        android:id="@+id/datePicker1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:calendarViewShown="false"
+        android:datePickerMode="spinner"
+        android:layout_centerHorizontal="true"/>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/amount"
+        android:layout_below="@id/summary"
+        android:layout_marginTop="250dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/menu">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:inputType="number"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
 </RelativeLayout>

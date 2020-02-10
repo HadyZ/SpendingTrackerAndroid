@@ -15,10 +15,17 @@ public class AddTransaction extends AppCompatActivity {
         setContentView(R.layout.activity_add_transaction);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);
     }
 
 
-
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
