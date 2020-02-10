@@ -16,6 +16,6 @@
         android:id="@+id/nav_transactions"
         android:name="com.example.spendingtrackerandroid.ui.transactions.TransactionFragment"
         android:label="@string/menu_transaction"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_transactions" />
 
 </navigation>

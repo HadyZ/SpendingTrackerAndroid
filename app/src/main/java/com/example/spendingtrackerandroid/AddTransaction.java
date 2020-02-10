@@ -1,24 +1,22 @@
 package com.example.spendingtrackerandroid;
-
 import androidx.appcompat.app.AppCompatActivity;
+import com.android.volley.toolbox.StringRequest;
 import androidx.appcompat.widget.Toolbar;
-
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
+import com.android.volley.toolbox.Volley;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.Response;
+import com.android.volley.Request;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.view.MenuItem;
 import android.widget.Toast;
+import android.os.Bundle;
+import android.view.Menu;
 
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
+
 
 
 public class AddTransaction extends AppCompatActivity {
@@ -92,7 +90,7 @@ public class AddTransaction extends AppCompatActivity {
         String category = s.getSelectedItem().toString();
 
 
-        String url ="http://192.168.1.69/SpendingMoney/addtransaction.php?category=" + category + "&summary=" + summary + "&trans_date=" + date + "&amount=" + amount;
+        String url ="http://192.168.1.71/SpendingMoney/addtransaction.php?category=" + category + "&summary=" + summary + "&trans_date=" + date + "&amount=" + amount;
         RequestQueue queue =
                 Volley.newRequestQueue(this);
         StringRequest request = new

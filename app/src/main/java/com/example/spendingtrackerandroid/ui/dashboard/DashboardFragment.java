@@ -37,7 +37,7 @@ public class DashboardFragment extends Fragment {
         categoryValue = root.findViewById(R.id.txt_category1_value);
 
 
-        getdashboarddata();
+        getDashboardData();
 
 
         return root;
@@ -48,8 +48,8 @@ public class DashboardFragment extends Fragment {
         super.onResume();
     }
 
-    private void getdashboarddata(){
-        String url = "http://192.168.1.69/SpendingMoney/getdashboarddata.php";
+    private void getDashboardData(){
+        String url = "http://192.168.1.71/SpendingMoney/getdashboarddata.php";
         RequestQueue queue = Volley.newRequestQueue(getContext());
 
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest
